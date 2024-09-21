@@ -5,44 +5,32 @@ class login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        
-        child: Column(
-          
+    return Scaffold(
+      body: LayoutBuilder(
+      builder: (context, constraints) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Image"),
-            
-            //! Text
-            Column(
-              children: [
-                Text("Coffee on your Desk"),
-                Text("Superfast.."),
-              ],
-            ),
 
-            //! Buttons
-            Column(
-              children: [
-                Text("Column: Login"),
-                Text("Column: Signup"),
-              ],
+            //! Image
+            Container(
+              height: 650,
+              width: double.infinity,
+              child: Image.asset('assets/loginImages/coffee.jpg',
+              fit: BoxFit.cover,
+              ),
             ),
-
-            //! Divider with text
-            Text("Divider"),
-
-            //! Row for Google and Facebook Logo
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            const Text("LOGIN"),
+            const Column(
+              
               children: [
-                Text("Row: Google Logo and Facebook Logo"),
+                Text("Enter your number"),
+                Text("Enter OTP"),
               ],
-            ),
-            Text("Random Text")
+            )
           ],
-        ),
-      ),
-    );
+        );
+      },
+    ));
   }
 }
