@@ -18,6 +18,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+  - "assets/loginImages/coffee.jpg"
 
 flutter_launcher_icons:
   android: "launcher_icon"
