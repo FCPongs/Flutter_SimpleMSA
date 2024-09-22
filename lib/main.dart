@@ -1,4 +1,5 @@
 import 'package:cs3midlogin/screens/login.dart';
+import 'package:cs3midlogin/screens/mainScreen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,10 +12,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: login(),
-      ),
+    return MaterialApp(
+      initialRoute: '/',
+
+      routes: {
+        '/': (context) => const mainScreen(),
+        '/login': (context) => const login(),
+      },
     );
   }
 }
