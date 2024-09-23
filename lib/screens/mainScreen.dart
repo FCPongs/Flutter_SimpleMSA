@@ -16,7 +16,7 @@ class mainScreen extends StatelessWidget {
                   height: constraints.maxHeight * 0.6,
                   width: double.infinity,
                   child: AnotherCarousel(
-                    
+                    autoplay: false,
                     images: [
                       Image.asset(
                           'assets/loginImages/coffee1.jpg', fit: BoxFit.cover,),
@@ -104,7 +104,9 @@ class mainScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/signup');
+                        },
                         child: const Text(
                           'SIGN UP',
                           style: TextStyle(

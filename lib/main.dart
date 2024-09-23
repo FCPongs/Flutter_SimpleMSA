@@ -1,5 +1,6 @@
 import 'package:cs3midlogin/screens/login.dart';
 import 'package:cs3midlogin/screens/mainScreen.dart';
+import 'package:cs3midlogin/screens/signUp.dart';
 import 'package:flutter/material.dart';
 
 
@@ -21,6 +22,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (context) => const mainScreen(),
         '/login': (context) => const login(),
+        '/signup': (context) => const signup(),
       },
     );
   }

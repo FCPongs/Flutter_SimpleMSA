@@ -15,6 +15,7 @@ class login extends StatelessWidget {
                 height: constraints.maxHeight * 0.5,
                 width: double.infinity,
                 child: AnotherCarousel(
+                  autoplay: false,
                   images: [
                     Image.asset(
                       'assets/loginImages/coffee1.jpg',
