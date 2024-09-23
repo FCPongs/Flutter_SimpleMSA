@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import 'package:another_carousel_pro/another_carousel_pro.dart';
 
 class mainScreen extends StatelessWidget {
   const mainScreen({super.key});
@@ -12,15 +12,29 @@ class mainScreen extends StatelessWidget {
         builder: (context, constraints) {
           return Column(
             children: [
-              //! Image
               Container(
-                height: constraints.maxHeight * 0.6,
-                width: double.infinity,
-                child: Image.asset(
-                  'assets/loginImages/coffee.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
+                  height: constraints.maxHeight * 0.6,
+                  width: double.infinity,
+                  child: AnotherCarousel(
+                    
+                    images: [
+                      Image.asset(
+                          'assets/loginImages/coffee1.jpg', fit: BoxFit.cover,),
+                      Image.asset(
+                          'assets/loginImages/coffee.jpg', fit: BoxFit.cover,),
+                      const ExactAssetImage("assets/loginImages/coffee2.jpg",)
+                    ],
+                    
+                  )),
+              //! Image
+              // Container(
+              //   height: constraints.maxHeight * 0.6,
+              //   width: double.infinity,
+              //   child: Image.asset(
+              //     'assets/loginImages/coffee.jpg',
+              //     fit: BoxFit.cover,
+              //   ),
+              // ),
 
               const SizedBox(
                 height: 10,
@@ -84,7 +98,7 @@ class mainScreen extends StatelessWidget {
                           foregroundColor: Colors.red,
                           side: const BorderSide(
                             color: Colors.black,
-                            width: 1,
+                            width: 0.5,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
@@ -105,26 +119,29 @@ class mainScreen extends StatelessWidget {
               //! Divider
               Container(child: const Text('Divider')),
 
-              SizedBox(height: 20,),
-              
-              //! Logo buttons
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FaIcon(
-                    FontAwesomeIcons.google,
-                    size: 25, 
-                    color: Color.fromARGB(255, 238, 118, 118),
-                  ),
-                  SizedBox(width: 20,),
-                  FaIcon(
-                    FontAwesomeIcons.facebook, 
-                    size: 25,
-                    color: Colors.blue,
-                  ),
-                ]
+              SizedBox(
+                height: 30,
               ),
-              SizedBox(height:constraints.maxHeight * 0.02,),
+
+              //! Logo buttons
+              const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                FaIcon(
+                  FontAwesomeIcons.google,
+                  size: 25,
+                  color: Color.fromARGB(255, 238, 118, 118),
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                FaIcon(
+                  FontAwesomeIcons.facebook,
+                  size: 25,
+                  color: Colors.blue,
+                ),
+              ]),
+              SizedBox(
+                height: constraints.maxHeight * 0.04,
+              ),
               //! Agreement text
               Center(
                 child: Container(
