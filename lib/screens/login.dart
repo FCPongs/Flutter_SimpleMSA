@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:another_carousel_pro/another_carousel_pro.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class login extends StatelessWidget {
   const login({super.key});
@@ -62,6 +63,7 @@ class login extends StatelessWidget {
                         const SizedBox(
                           height: 15,
                         ),
+                        //! OTP input
                         Container(
                           width: constraints.maxWidth * 0.9,
                           height: 50,
@@ -75,7 +77,7 @@ class login extends StatelessWidget {
                           height: 10,
                         ),
 
-                        //! OTP input
+                        //! Button
                         Container(
                           width: constraints.maxWidth * 0.9,
                           child: ElevatedButton(
@@ -88,12 +90,31 @@ class login extends StatelessWidget {
                               onPressed: () {},
                               child: Text("LOGIN")),
                         ),
+                        SizedBox(
+                          height: 20,
+                        ),
                       ],
                     ),
                   ],
                 )),
+            //! Icons
+            const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              FaIcon(
+                FontAwesomeIcons.google,
+                size: 25,
+                color: Color.fromARGB(255, 238, 118, 118),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              FaIcon(
+                FontAwesomeIcons.facebook,
+                size: 25,
+                color: Colors.blue,
+              ),
+            ]),
             SizedBox(
-              height: constraints.maxHeight * 0.09,
+              height: constraints.maxHeight * 0.05,
             ),
             Expanded(
               child: Center(

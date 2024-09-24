@@ -1,3 +1,4 @@
+import 'package:cs3midlogin/screens/home.dart';
 import 'package:cs3midlogin/screens/login.dart';
 import 'package:cs3midlogin/screens/mainScreen.dart';
 import 'package:cs3midlogin/screens/signUp.dart';
@@ -23,6 +24,7 @@ class MainApp extends StatelessWidget {
         '/': (context) => const mainScreen(),
         '/login': (context) => const login(),
         '/signup': (context) => const signup(),
+        '/home': (context) => const home(),
       },
     );
   }
