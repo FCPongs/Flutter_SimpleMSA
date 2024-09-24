@@ -145,7 +145,8 @@ class mainScreen extends StatelessWidget {
                 height: constraints.maxHeight * 0.04,
               ),
               //! Agreement text
-              Center(
+              Expanded(
+                child: Center(
                 child: Container(
                   width: 250,
                   child: const Text(
@@ -154,9 +155,8 @@ class mainScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-              )
-            ],
-          );
+              ))
+            ]);
         },
       ),
     );

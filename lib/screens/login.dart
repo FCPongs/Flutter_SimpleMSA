@@ -12,7 +12,7 @@ class login extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-                height: constraints.maxHeight * 0.5,
+                height: constraints.maxHeight * 0.55,
                 width: double.infinity,
                 child: AnotherCarousel(
                   autoplay: false,
@@ -30,19 +30,9 @@ class login extends StatelessWidget {
                     )
                   ],
                 )),
-            // //! Image
-            // Container(
-            //   height: 650,
-            //   width: double.infinity,
-            //   child: Image.asset(
-            //     'assets/loginImages/coffee.jpg',
-            //     fit: BoxFit.cover,
-            //   ),
-            // ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-
             Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Column(
@@ -100,21 +90,24 @@ class login extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Center(
-                      child: Container(
-                        width: 250,
-                        child: const Text(
-                          "By clicking, you agree to our Terms of Service & Privacy Policy",
-                          softWrap: true,
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    )
                   ],
                 )),
+            SizedBox(
+              height: constraints.maxHeight * 0.09,
+            ),
+            Expanded(
+              child: Center(
+                child: Container(
+                  alignment: Alignment.center,
+                  width: 250,
+                  child: const Text(
+                    "By clicking, you agree to our Terms of Service & Privacy Policy",
+                    softWrap: true,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
           ],
         );
       },
