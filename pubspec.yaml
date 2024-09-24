@@ -25,6 +25,7 @@ flutter:
     - "assets/loginImages/coffee.jpg"
     - "assets/loginImages/coffee1.jpg"
     - "assets/loginImages/coffee2.jpg"
+    - "assets/images/icon.png"
 
 flutter_launcher_icons:
   android: "launcher_icon"

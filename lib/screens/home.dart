@@ -8,7 +8,25 @@ class home extends StatelessWidget {
     return Scaffold(
       body: LayoutBuilder(builder: (context, constraints) {
         return Center(
-          child: Image.asset('assets/logo.png'),
+          child: Container(
+            height: constraints.maxHeight * .3,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.50),
+                  blurRadius: 10,
+                  offset: Offset(10,15)
+
+              )]
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset('assets/images/icon.png',),
+
+            ),
+          )
+          
         );
       }),
     );

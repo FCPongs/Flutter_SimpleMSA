@@ -98,16 +98,21 @@ class login extends StatelessWidget {
                   ],
                 )),
             //! Icons
-            const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              FaIcon(
-                FontAwesomeIcons.google,
-                size: 25,
-                color: Color.fromARGB(255, 238, 118, 118),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+                icon: const FaIcon(
+                  FontAwesomeIcons.google,
+                  size: 25,
+                  color: Color.fromARGB(255, 238, 118, 118),
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
-              FaIcon(
+              const FaIcon(
                 FontAwesomeIcons.facebook,
                 size: 25,
                 color: Colors.blue,
