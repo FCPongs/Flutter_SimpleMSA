@@ -23,7 +23,6 @@ class home extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.asset('assets/images/icon.png',),
-
             ),
           )
           

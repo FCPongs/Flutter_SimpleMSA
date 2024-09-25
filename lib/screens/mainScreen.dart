@@ -15,7 +15,10 @@ class mainScreen extends StatelessWidget {
                 height: constraints.maxHeight * 0.6,
                 width: double.infinity,
                 child: AnotherCarousel(
-                  autoplay: false,
+           
+                  dotBgColor: Colors.transparent,
+                  dotIncreasedColor: const Color.fromARGB(255, 241, 98, 87),
+                  autoplay: true,
                   images: [
                     Image.asset(
                       'assets/loginImages/coffee1.jpg',
@@ -111,12 +114,13 @@ class mainScreen extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 15),
-            //! Divider
+            const SizedBox(height: 15),
 
+            //! Divider
             Container(
               width: constraints.maxWidth * .75,
-              child: const Row(children: <Widget>[
+              child: const Row(
+                children:[
                 Expanded(child: Divider()),
                 SizedBox(width: 10,),
                 Text("or Login with"),
@@ -130,16 +134,22 @@ class mainScreen extends StatelessWidget {
             ),
 
             //! Logo buttons
-            const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              FaIcon(
-                FontAwesomeIcons.google,
-                size: 25,
-                color: Color.fromARGB(255, 238, 118, 118),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+
+                icon: const FaIcon(
+                  FontAwesomeIcons.google,
+                  size: 25,
+                  color: Color.fromARGB(255, 238, 118, 118),
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
-              FaIcon(
+              const FaIcon(
                 FontAwesomeIcons.facebook,
                 size: 25,
                 color: Colors.blue,

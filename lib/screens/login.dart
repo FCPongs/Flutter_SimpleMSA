@@ -16,7 +16,10 @@ class login extends StatelessWidget {
                 height: constraints.maxHeight * 0.55,
                 width: double.infinity,
                 child: AnotherCarousel(
-                  autoplay: false,
+                  animationDuration: Durations.medium1,
+                  dotBgColor: Colors.transparent,
+                  dotIncreasedColor: const Color.fromARGB(255, 241, 98, 87),
+                  autoplay: true,
                   images: [
                     Image.asset(
                       'assets/loginImages/coffee1.jpg',
@@ -57,6 +60,7 @@ class login extends StatelessWidget {
                           child: const TextField(
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(),
+
                                 hintText: 'Enter number'),
                           ),
                         ),
@@ -69,7 +73,12 @@ class login extends StatelessWidget {
                           height: 50,
                           child: const TextField(
                             decoration: InputDecoration(
-                                border: OutlineInputBorder(),
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    width: 2,
+                                    color: Colors.red,
+                                  )
+                                ),
                                 hintText: 'Enter OTP'),
                           ),
                         ),
@@ -90,13 +99,33 @@ class login extends StatelessWidget {
                               onPressed: () {},
                               child: Text("LOGIN")),
                         ),
-                        SizedBox(
-                          height: 20,
+                        const SizedBox(
+                          height: 10,
                         ),
                       ],
                     ),
                   ],
                 )),
+            //! Divider
+            Center(
+              child: Container(
+                width: constraints.maxWidth * .75,
+                child: const Row(children: [
+                  Expanded(child: Divider()),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text("or Login with"),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(child: Divider()),
+                ]),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             //! Icons
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               IconButton(
@@ -119,7 +148,7 @@ class login extends StatelessWidget {
               ),
             ]),
             SizedBox(
-              height: constraints.maxHeight * 0.05,
+              height: constraints.maxHeight * 0.01,
             ),
             Expanded(
               child: Center(

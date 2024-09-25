@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,7 +11,7 @@ class signup extends StatelessWidget {
       body: LayoutBuilder(builder: (context, constraints) {
         return Center(
           child: Card(
-            elevation: 10,
+            elevation: 35,
             child: Container(
               width: constraints.maxWidth * 0.7,
               height: constraints.maxHeight * 0.65,
@@ -28,7 +29,7 @@ class signup extends StatelessWidget {
                             width: constraints.maxWidth * 0.6,
                             child: const TextField(),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           //! Last name
@@ -37,7 +38,7 @@ class signup extends StatelessWidget {
                             width: constraints.maxWidth * 0.6,
                             child: const TextField(),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           //! Email
@@ -46,7 +47,7 @@ class signup extends StatelessWidget {
                             width: constraints.maxWidth * 0.6,
                             child: const TextField(),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           //! Password
@@ -58,7 +59,7 @@ class signup extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Center(
@@ -75,7 +76,7 @@ class signup extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     //! Buttons and Divider
@@ -88,45 +89,92 @@ class signup extends StatelessWidget {
                             child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color.fromARGB(255, 247, 110, 100),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 247, 110, 100),
                                   foregroundColor: Colors.white,
                                 ),
                                 child: const Text("Join now")),
                           ),
-                          SizedBox(height: 5,),
-                          const Text("or"),
-
-                          SizedBox(height: 5,),
-                          const Row(
+                          SizedBox(
+                            height: constraints.maxHeight * 0.02,
+                          ),
+                          //! Divider
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: constraints.maxWidth * .15,
+                                  child: Divider(),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                const Text("or Login with"),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  width: constraints.maxWidth * .15,
+                                  child: Divider(),
+                                ),
+                              ]),
+                          SizedBox(
+                            height: constraints.maxHeight * 0.02,
+                          ),
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              FaIcon(
-                                FontAwesomeIcons.google,
-                                size: 25,
-                                color: Color.fromARGB(255, 238, 118, 118),
+                              IconButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/home');
+                                },
+                                icon: const FaIcon(
+                                  FontAwesomeIcons.google,
+                                  size: 25,
+                                  color: Color.fromARGB(255, 238, 118, 118),
+                                ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 20,
                               ),
-                              FaIcon(
+                              const FaIcon(
                                 FontAwesomeIcons.facebook,
                                 size: 25,
                                 color: Colors.blue,
                               ),
                             ],
                           ),
-                          SizedBox(height: 10,),   
+                          SizedBox(
+                            height: constraints.maxHeight * 0.01,
+                          ),
                         ],
                       ),
                     ),
-                  Expanded(
-                    child: 
-                    Container(
-                      alignment: Alignment.center,
-                      child: const Text("Already on the app? Sign in"),
-                      ))
+                    Expanded(
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: RichText(
+                          text: TextSpan(
+                            style: TextStyle(color: Colors.grey, fontSize: 14.0),
+                            children: <TextSpan>[
+                              const TextSpan(text: "Already on the app? "),
+                              TextSpan(
+                                text: "Sign in",
+                                style: const TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Navigator.pushNamed(context,
+                                        '/login');
+                                  },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
                   ]),
-            
             ),
           ),
         );
